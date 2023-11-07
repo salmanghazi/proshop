@@ -7,12 +7,11 @@ import Rating from '../components/Rating';
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
     const fetchProduct = async () => {
       const {data} = await axios.get(`/api/product/${productId}`);
-      console.log(data);
       setProduct(data);
     }
 
